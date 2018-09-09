@@ -31,6 +31,17 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
+				'to' => $userId,
+				'messages':[
+        				{
+            					"type":"text",
+            					"text":"Hello, world1"
+        				},
+        				{
+            					"type":"text",
+            					"text":"Hello, world2"
+        				}
+    				]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
