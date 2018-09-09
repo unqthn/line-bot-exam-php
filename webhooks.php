@@ -56,4 +56,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "Welcome VanilaSky1";
+echo "Welcome VanilaSky2";
