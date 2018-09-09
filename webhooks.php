@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => 'สวัสดีครับพี่ ยู มีอะไรให้ข้าน้อยรับใช้ครับ'
+				'messages' => $messages,
 				
 			];
 			$post = json_encode($data);
