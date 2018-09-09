@@ -35,7 +35,14 @@ if (!is_null($events['events'])) {
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
+			//test
+			if($events['events'][0]['text'] == "Hello vanilasky"){
+				$post = array();
+				$post['replyToken'] = $events['events'][0]['replyToken'];
+				$post['messages'][0]['type'] = 'text';
+				$post['messages'][0]['text'] = 'สวัสดีครับมีอะไรให้ข้าน้อยรับใช้'ว
+			}
+			
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -49,4 +56,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "Welcome VanilaSky3";
+echo "Welcome VanilaSky1";
