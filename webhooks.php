@@ -23,7 +23,14 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $event['message']['text']
+				'text' => $event['message']['text'],
+				//test
+				if($events['events'][0]['text'] == "Hello vanilasky"){
+				$post = array();
+				$post['replyToken'] = $events['events'][0]['replyToken'];
+				$post['messages'][0]['type'] = 'text';
+				$post['messages'][0]['text'] = "สวัสดีครับมีอะไรให้ข้าน้อยรับใช้";
+				}
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -35,13 +42,8 @@ if (!is_null($events['events'])) {
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-			//test
-			if($events['events'][0]['text'] == "Hello vanilasky"){
-				$post = array();
-				$post['replyToken'] = $events['events'][0]['replyToken'];
-				$post['messages'][0]['type'] = 'text';
-				$post['messages'][0]['text'] = "สวัสดีครับมีอะไรให้ข้าน้อยรับใช้";
-			}
+			
+
 			
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
@@ -56,4 +58,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "Welcome VanilaSky2";
+echo "Welcome VanilaSky22";
