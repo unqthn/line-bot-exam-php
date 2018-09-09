@@ -25,12 +25,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $event['message']['text'],
 				//test
-				if($events['events'][0]['text'] == "Hello vanilasky"){
-				$post = array();
-				$post['replyToken'] = $events['events'][0]['replyToken'];
-				$post['messages'][0]['type'] = 'text';
-				$post['messages'][0]['text'] = "สวัสดีครับมีอะไรให้ข้าน้อยรับใช้";
-				}
+				
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
