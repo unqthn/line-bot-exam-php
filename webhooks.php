@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 				$post = array();
 				$post['replyToken'] = $events['events'][0]['replyToken'];
 				$post['messages'][0]['type'] = 'text';
-				$post['messages'][0]['text'] = 'สวัสดีครับมีอะไรให้ข้าน้อยรับใช้'ว
+				$post['messages'][0]['text'] = 'สวัสดีครับมีอะไรให้ข้าน้อยรับใช้';
 			}
 			
 			$ch = curl_init($url);
